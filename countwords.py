@@ -4,16 +4,6 @@ stopwords = set()
 for line in codecs.open('stopwords_fr.txt', encoding='utf8'):
     stopwords.add(line.strip())
 
-def tokenize_words(line):
-    without_spaces = line.strip().lower()
-    tokenized = without_spaces.split(' ')
-    outputwords = []
-    for word in tokenized:
-        if word != '' and word not in stopwords:
-            outputwords.append(word)
-
-    return outputwords
-
 countedwords = {}
 in_file = codecs.open('le-musee.txt', encoding='utf8')
 for line in in_file:
